@@ -14,7 +14,7 @@ class AuthCheck
         
         if(!Admin::check($path, $request->admin_id )) {
             return json([
-                'code'=> 5,
+                'code'=> 2,
                 'message' => '',
                 'data' => []
             ]);
