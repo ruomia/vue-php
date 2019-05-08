@@ -14,7 +14,7 @@ class Rule extends Backend
         $rule_list = AuthRule::getLists();
 
         $res['total'] = count($rule_list);
-        $res['list'] = $rule;
+        $res['list'] = $rule_list;
         return ResultVo::success($res);
 
     }

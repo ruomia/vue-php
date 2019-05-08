@@ -35,7 +35,7 @@ use app\admin\model\AuthRuleRole;
     public function userinfo()
     {
         // 权限信息
-        $admin_id = $this->requset->admin_id;
+        $admin_id = $this->request->admin_id;
         $roles = AuthRoleAdmin::getRoleId($admin_id);
         // 判断是否有超级管理员权限
         if(!in_array( 1, $roles)) {
@@ -45,7 +45,7 @@ use app\admin\model\AuthRuleRole;
         } else {
             $authRules = ['admin'];
         }
-        $admin = Admin::where('id', $admin_id)
+        $admin = AdminModel::where('id', $admin_id)
                     ->field('id,username,avatar')
                     ->find();
         return success([

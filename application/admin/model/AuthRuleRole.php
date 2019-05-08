@@ -43,7 +43,8 @@ class AuthRuleRole extends Model
     {
         $data = self::field('rule_id')
             ->where('role_id', 'in', $roles)
-            ->select();
+            ->select()
+            ->toArray();
         $result = array_unique(array_column($data));
         return $result;
     }

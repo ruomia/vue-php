@@ -20,7 +20,6 @@ class Check
         {
             $jwt = JWTCHECK::decode($jwt, Env::get('jwt.key'), array('HS256'));
             $request->admin_id = $jwt->id;
-            return $next($request);
         }
         catch(\Exception $e)
         {
@@ -30,5 +29,7 @@ class Check
                 'message' => $e->getMessage()
             ]);
         }
+        return $next($request);
+
     }
 }

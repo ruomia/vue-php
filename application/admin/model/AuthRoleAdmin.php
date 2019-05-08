@@ -10,8 +10,9 @@ class AuthRoleAdmin extends Model
     {
   
         $roles = self::field('role_id')
-        ->where('admin_id', $req->admin_id)
-        ->select();
+        ->where('admin_id', $admin_id)
+        ->select()
+        ->toArray();
         $result = array_column($roles, 'role_id');
         return $result;
     }
