@@ -86,6 +86,7 @@ class Rule extends Backend
                 $row->status = $params['status'];
                 $row->condition = $params['condition'];
                 $row->status = $params['status'];
+                $row->path = $params['path'];
                 $result = $row->save();
                 
                 if (!$result){

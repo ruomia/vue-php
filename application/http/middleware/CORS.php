@@ -1,7 +1,7 @@
 <?php
 namespace app\http\middleware;
 
-use think\Response;
+use think\facade\Response;
 class CORS
 {
     public function handle($request, \Closure $next)
